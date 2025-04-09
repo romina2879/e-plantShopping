@@ -264,6 +264,7 @@ function ProductList({ onHomeClick }) {
     const handleCartClick = (e) => {
         e.preventDefault();
         setShowCart(true); // Set showCart to true when cart icon is clicked
+        setShowPlants(false);
     };
     const handlePlantsClick = (e) => {
         e.preventDefault();
@@ -272,7 +273,8 @@ function ProductList({ onHomeClick }) {
     };
 
     const handleContinueShopping = (e) => {
-        e.preventDefault();
+        if (e) e.preventDefault();
+        setShowPlants(true);
         setShowCart(false);
     };
         console.log("showCart set to false");
